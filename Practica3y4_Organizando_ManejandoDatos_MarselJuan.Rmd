@@ -256,7 +256,11 @@ Para pasar a formato *tidy* necesitamos realizar dos operaciones en este caso. E
 Convierte el conjunto de datos TB en *tidy* utilizando `gather` y `separate`.
 
 ```{r}
+load('data/tb.Rdata')
 
+tuberculosis_tidy<-raw%>%gather(key="sexo", value="casos", -country, -year)%>%separate(sexo, into=c("sexo", "edad"), sep=1)
+
+head(tuberculosis_tidy)
 ```
 
 ## Variables almacenadas tanto en filas como en columnas
@@ -277,7 +281,6 @@ Para obtener la versión *tidy* primero juntamos todos los días en una variable
 Obtén la versión *tidy* del conjunto de datos `weather` utilizando las funciones `pivot_longer` y `pivot_wider`. Además cambiaremos las columnas `year`, `month` y `dia` por una única variable `fecha`. Para que la operación `pivot_wider` no de error tendremos que eliminar los NA's cuando usemos `pivot_longer`.
 
 ```{r}
-
 
 ```
 
