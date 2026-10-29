@@ -356,7 +356,6 @@ planes.f<-planes %>%
 planes.f$manufacturer[planes.f$manufacturer %in% c("AIRBUS", "AIRBUS INDUSTRIE")] <- "AIRBUS COMP"
   
   
-  
 head(planes.f)
 ```
 
@@ -365,8 +364,10 @@ head(planes.f)
 Crea un data frame denominado `flights.f` que contenga los vuelos que involucren a los aviones presentes en el data frame `planes.f`. Para ello utiliza algunas de las funciones de **XXX_join** y la variable `tailnum` que es común en ambos data frames.
 
 ```{r }
+flights.f<-flights %>%
+  semi_join(planes.f)
 
-
+flights.f
 ```
 
 ### Ejercicio 8
