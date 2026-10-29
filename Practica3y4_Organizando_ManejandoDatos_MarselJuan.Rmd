@@ -334,8 +334,11 @@ load("./data/VuelosNY.Rdata")
 Muestra las primeras muestras de ambos data frames para hacerte una idea de las variables que contienen. ¿Qué diferencia existe entre la información mostrada en ambos data frames?
 
 ```{r }
-
+head(flights)
+head(planes)
 ```
+
+El data frame flights nos muestra información sobre determinados vuelos, incluyendo cosas como su hora de partida o el retraso que podía llevar en su salida/llegada, mientras que el data frame planes nos muestra la información técnica de distintos aviones.
 
 ### Ejercicio 6
 
@@ -344,8 +347,6 @@ En nuestro estudio queremos aplicar una serie de criterios de exclusión sobre l
 - Nota: Revisar el uso de la función filter vista en clase y tener en cuenta los operadores de comparación: igual ==, distinto !=, mayor \>, mayor o igual \>=, menor \<, menor o igual \<=.
 
 ```{r }
-
-
 
 ```
 
