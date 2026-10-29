@@ -286,7 +286,7 @@ load('data/weather.Rdata')
 weather_tidy<- raw %>% 
   pivot_longer(names_to="dia", values_to="temperatura", cols="d1":"d31",         names_prefix="d", values_drop_na=T) %>% 
   pivot_wider(names_from="element", values_from="temperatura") %>%
-  unite(fecha, year, month, dia)
+  unite(fecha, year, month, dia, sep="-")
   
 
 head(weather_tidy)
