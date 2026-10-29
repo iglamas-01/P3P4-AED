@@ -351,7 +351,7 @@ levels(factor(planes$manufacturer))
 
 planes.f<-planes %>%
   filter(!(manufacturer %in% c("MCDONNELL DOUGLAS", "MCDONNELL DOUGLAS AIRCRAFT CO", "MCDONNELL DOUGLAS CORPORATION"))) %>%
-  filter(90<=seats & seats<=120)
+  filter(90<=seats & seats<=210)
 
 planes.f$manufacturer[planes.f$manufacturer %in% c("AIRBUS", "AIRBUS INDUSTRIE")] <- "AIRBUS COMP"
   
@@ -365,7 +365,7 @@ Crea un data frame denominado `flights.f` que contenga los vuelos que involucren
 
 ```{r }
 flights.f<-flights %>%
-  semi_join(planes.f)
+  semi_join(planes.f, by="tailnum")
 
 flights.f
 ```
@@ -374,8 +374,9 @@ flights.f
 
 Reasigna los nombres de los data frames `planes.f` y `flights.f` a los nombres originales `planes` y `flights`.
 
-```{r }
-
+```{r}
+planes<-planes.f
+flights<-flights.f
 ```
 
 ### Ejercicio 9
